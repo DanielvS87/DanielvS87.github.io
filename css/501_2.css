@@ -1,0 +1,448 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body, .wrapper{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    height: 10%;
+    background-color: #222;
+}
+
+header>ul{
+    margin: 0 auto;
+    align-self: center;
+}
+
+header>ul>a{
+    display: inline-block;
+    border: 1px #DBDBCE solid;
+    padding: .5em .8em;
+}
+
+header>ul>a:hover{
+    background-color: #DBDBCE;
+    color: #222;
+}
+
+header>ul>a>li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #DBDBCE;
+}
+
+a.active{
+    background-color: #DBDBCE;
+    color:#222;
+}
+
+input {
+    height: 20px;
+    background-color: #DBDBCE;
+    color:#222;
+}
+
+.main_content{
+    height:85%;
+    width: 100%;
+    background-image: url("../img/501.jpg");
+    background-color: #DBDBCE;
+    background-blend-mode: darken, darken;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+}
+
+footer{
+    height: 5%;
+    background-color: #222;
+}
+
+.leftPlayer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 40%;
+    top: 5%;
+    left: 2.5%;
+    background-color: #222;
+    border: #DBDBCE 1px solid;
+    transform: translateX(-120%);
+    transition: transform 800ms;
+    justify-content: flex-start;
+}
+.leftPlayer>div, .rightPlayer>div{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.leftPlayer.start, .rightPlayer.start{
+    transform: translateX(0);
+}
+
+.rightPlayer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 90%;
+    width: 40%;
+    top: 5%;
+    right:2.5%;
+    background-color: #222;
+    border: #DBDBCE 1px solid;
+    transform: translateX(120%);
+    transition: transform 800ms;
+    justify-content: flex-start;
+}
+
+.data {
+    position: absolute;
+    height: 90%;
+    width: 80%;
+    top: 5%;
+    left: 10%;
+    background-color: #222;
+    border: #DBDBCE 1px solid;
+    transition: transform 800ms 200ms;
+}
+
+.data.start {
+    transform: rotateY(90deg);
+    transition: transform 800ms;
+}
+
+.playerOne, .playerTwo{
+    background-color: #004489;
+    color:#DBDBCE;
+    border: #DBDBCE 1px solid;
+    margin:0 auto;
+    text-align: center;
+    z-index: 1;
+    margin-bottom: 1em;
+}
+.scoreSection{
+    height: auto;
+}
+
+.dartPlayerOne{
+    background-color: #222;
+    color: #DBDBCE;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4em;
+    justify-self: center;
+    margin-bottom: 1em;
+}
+
+.dartValue {
+    width: 70px;
+    height: 25px;
+    font-size: 1.2rem;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.radio{
+    display: inline-block
+}
+
+.multiplier p{
+    display: inline;
+}
+
+.gridScoreBoard{
+    height: 70%;
+}
+
+.gridScoreBoard>.scoreBoard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "item-a item-b" "item-c item-d";
+    grid-gap: 0;
+    height: 100%;
+    width:80%;
+    background-color: #DBDBCE;
+    border: #222 double 5px;
+    text-align: center;
+}
+
+.amountLeft, .turnScore{
+    margin: 0.5em 0 0.5em 0;
+    text-align: center;
+}
+
+.amountLeft {
+    grid-area: item-a;
+}
+.turnScore{
+    grid-area: item-b;
+}
+
+h2{
+    width: 100%;
+}
+.amountLeftList{
+    grid-area: item-c;
+}
+
+.scoreTurnList{
+    grid-area: item-d;
+}
+
+.amountLeftList>ul, .scoreTurnList>ul{
+    width:100%;
+    padding-top: 0.5em;
+    border-top: 1px solid #222;
+
+}
+.amountLeftList>ul>li, .scoreTurnList>ul>li{
+    width:100%;
+    text-align: center;
+    list-style-type: none;
+}
+
+.submitScoreBtn{
+    margin: 0 auto;
+    position: relative;
+    height: 5%;
+    width: 20%;
+    background-color: #004489;
+    border:1px solid #DBDBCE;
+    color:#DBDBCE;
+    margin-bottom: 1em;
+}
+
+.submitScoreBtn:hover{
+    transform: scale(1.1);
+    transition: 200ms;
+    border-top: 1px solid #DBDBCE;
+    border-left:1px solid #DBDBCE;
+    background-color: rgb(14, 23, 146);
+    color: #DBDBCE;
+    z-index: 3;
+}
+
+.data>div{
+    height: 100%;
+    width:50%;
+    float:left;
+}
+
+.playerNameInput{
+    display: grid;
+    grid-template-rows: auto auto auto 1fr 1fr; 
+    border: 1px #DBDBCE solid;
+    width: 50%;
+    height: 80%;
+    text-align: center;
+    background-color:#222;
+    color:#DBDBCE;
+    top:10%;
+    left:25%;
+    position: relative;
+}
+.playerNameInput> h2{
+    margin-bottom: 2em;
+    border: 1px #DBDBCE solid;
+    background-color: #004489;
+    color: #DBDBCE;
+
+}
+
+.playerNameInput>input {
+    justify-self: center;
+    height: 2em;
+    width: 50%;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+.playerNameInput>button{
+    justify-self: center;
+    align-self: center;
+    padding: 1rem 1.5rem;
+}
+.startingAmount {
+    align-self: center;
+    font-size: 2em;
+}
+
+#startBtn {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    top: 40%;
+    left: 40%;
+    background-color: #004489;
+    color:#DBDBCE;
+    font-size: 2em;
+    border:#DBDBCE 1px solid;
+}
+
+#startBtn:hover{
+    border:#DBDBCE 1px solid;
+    background-color:rgb(14, 23, 146);
+    color: #DBDBCE;
+    transform: scale(1.1);
+    transition: 200ms;
+}
+
+.playerNameInput .exampleDiv{
+    display: flex;
+    width:100%;
+    height: 100%;
+    background-color: #DBDBCE;
+    align-items: center;
+    justify-items: center;
+    border: 3px #222 double;
+}
+
+.exampleDiv>p{
+    background-color: #DBDBCE;
+    color:#222;
+    font-size: 2em;
+    justify-self: center;
+    align-self: center;
+    padding: 0.8em .4em;
+    width:100%;
+    text-align: center;
+}
+#resetBtn {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    left: 45%;
+    top: 145%;
+    transition: top 400ms ;
+    border: 3px #DBDBCE double;
+    color: #DBDBCE;
+    background-color: #004489;
+}
+#resetBtn.start {
+    width: 10%;
+    height: 10%;
+    top: 65%;
+    border: 3px #DBDBCE double;
+    color: #DBDBCE;
+    background-color: #004489;
+    transition: top 400ms 1000ms;
+}
+#resetBtn.start:hover{
+    border:#DBDBCE 3px double;
+    background-color:rgb(14, 23, 146);
+    color: #DBDBCE;
+    transform: scale(1.1);
+    transition: 200ms;
+}
+
+#resetLeg {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    left: 45%;
+    top: 130%;
+    transition: top 400ms;
+    border: 3px #DBDBCE double;
+    color: #DBDBCE;
+    background-color: #004489;
+}
+
+#resetLeg.start {
+    width: 10%;
+    height: 10%;
+    top: 50%;
+    border: 3px #DBDBCE double;
+    color: #DBDBCE;
+    background-color: #004489;
+
+    transition: top 400ms 1000ms;
+}
+
+#resetLeg.start:hover{
+    border:#DBDBCE 3px double;
+    background-color:rgb(14, 23, 146);
+    color: #DBDBCE;
+    transform: scale(1.1);
+    transition: 200ms;
+}
+
+.scores {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 10%;
+    height: 20%;
+    left: 45%;
+    top: -50%;
+    background-color: #222;
+    color: #DBDBCE;
+    align-items: flex-start;
+    border: 1px #DBDBCE solid;
+    transition: top 300ms;
+}
+
+.scores.show {
+    top: 5%;
+    transition: top 300ms 800ms;
+}
+
+.playerStats {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border: 1px #DBDBCE solid;
+    font-size: 1em;
+}
+.playerStats p{
+    font-size: 2em;
+    justify-self: center;
+}
+
+.sets, .legs {
+    height: 50%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sets>h2, .legs>h2 {
+    width: 100%;
+    background-color: #004489;
+    border: 1px #DBDBCE solid;
+    margin-bottom: auto;
+}
+
+.nameBtn {
+    border: 1px #DBDBCE solid;
+    color: #DBDBCE;
+    background-color: #004489;
+}
+
+.nameBtn:hover {
+    border:#DBDBCE 1px solid;
+    background-color:rgb(14, 23, 146);
+    color: #DBDBCE;
+    transform: scale(1.1);
+    transition: 200ms;
+}

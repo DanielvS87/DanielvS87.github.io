@@ -1,0 +1,171 @@
+:root{
+    --width: 80%;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body, .wrapper{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    height: 10%;
+    background-color: #222;
+}
+
+header>ul{
+    margin: 0 auto;
+    align-self: center;
+}
+
+header>ul>a{
+    display: inline-block;
+    border: 1px #DBDBCE solid;
+    padding: .5em .8em;
+}
+
+header>ul>a:hover{
+    background-color: #DBDBCE;
+    color: #222;
+}
+
+header>ul>a>li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #DBDBCE;
+}
+
+a.active{
+    background-color: #DBDBCE;
+    color:#222;
+}
+
+li {
+    list-style-type: none;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#score_board {
+    left: 0%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas:"l_name l_name . r_name r_name" "lscores left number right rscores";
+    grid-template-columns:  1fr 2fr 1fr 2fr 1fr;
+    grid-template-rows: 1fr 4fr;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    justify-content: space-evenly;
+    align-content: space-around;
+}
+
+#score_board.move{
+    width: var(--width);
+    left: 300px;
+}
+
+#left_scores_input.move{
+    left: 0px;
+}
+
+
+#left_scoreboard {
+    grid-area: lscores;
+    background-color: beige;
+}
+
+#checklist_left {
+    grid-area: left;
+    height: 100%;
+}
+
+#score_number {
+    grid-area: number;
+}
+
+#checklist_right {
+    height: 100%;
+    grid-area: right;
+}
+
+#right_scoreboard {
+    grid-area: rscores;
+    background-color: beige;
+}
+
+#checklist_left>div>ul>li, #checklist_right>div>ul>li {
+    display: inline-block;
+    border: 1px solid black;
+    width: 10px;
+    height: 10px;
+}
+
+#left_scores_input {
+    background-color: #888;
+    height: 100%;
+    position: absolute;
+    width: 300px;
+    left: -300px;
+    border-right: 1px solid black;
+}
+
+.number_input {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+}
+.number {
+    color: white;
+    width: 100%;
+    height: 95.3px;
+}
+
+#right_scores_input {
+    background-color: #888;
+    height: 100%;
+    position: absolute;
+    width: 20%;
+    left: 100%;
+    transition: left 200ms linear;
+    border-left: 1px solid black;
+}
+
+.black {
+    background-color: black;
+}
+
+@media screen and (max-width:850px) {
+    .number_input {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(auto);
+    }
+    #left_scores_input.move {
+        width: 150px;
+    }
+    #score_board.move {
+        left: 150px;
+        width: calc((--width)+150px);
+    }
+}

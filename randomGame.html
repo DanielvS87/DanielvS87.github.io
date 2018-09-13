@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Game</title>
+    <link rel="stylesheet" href="../dartsWebSite/css/randomGame.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <ul>
+                <a href="../dartsWebSite/index.html"><li>Home</li></a>
+                <a href="../dartsWebSite/501_2.html"><li>501 Game</li></a>
+                <a href="../dartsWebSite/randomGame.html" class="active"><li>Random Game</li></a>
+                <a href=""><li>Tic-Tac Game</li></a>
+            </ul>
+        </header>
+        <div id="main_content">
+            <div id="names" class="move">
+                <ul id="nNames">
+                    
+                </ul>
+            </div>
+            <div id="innerDiv" class="move">
+                <div class="gameCard cards" id="card_1">
+                    <div class="front bg-front">
+                        <p class="starters"></p>
+                        <button class="thrownBtn">Thrown the Number</button>
+                    </div>
+                    <div class="back bg-back">
+                        <button class="turnCard">Turn Card</button>
+                    </div>
+                </div>
+                <div class="gameCard cards" id="card_2">
+
+                    <div class="front bg-front">
+                        <p class="starters"></p>
+                        <button class="thrownBtn">Thrown the Number</button>
+                    </div>
+                    <div class="back bg-back">
+                        <button class="turnCard">Turn Card</button>
+                    </div>
+                </div>
+                <div class="gameCard cards" id="card_3">
+
+                    <div class="front bg-front">
+                        <p class="starters"></p>
+                    <button class="thrownBtn">Thrown the Number</button>
+                    </div>
+                    <div class="back bg-back">                        
+                        <button class="turnCard">Turn Card</button>
+                    </div>
+                </div>
+                <div class="gameCard" id="deck">
+
+                </div>
+                <div id="cardsLeft">
+                    <div>
+                        <h2>Remaining Cards</h2>
+                        <p id="cards_remaining">59</p>
+                    </div>
+                </div>
+                <div class="inputPlayers">
+                    <p>Enter Player:</p>
+                    <input id="namePlayer" type="text">
+                    <button id="btn-submit">Submit Name</button>
+                    <ul id="nameList"></ul>
+                    <button id="startbtn">Start Game</button>
+                </div>
+                <div class="next">
+                    <button id="nxt_Btn">Next Player</button>
+                </div>
+            </div>
+
+        </div>
+        <footer>
+
+        </footer>
+    </div>
+
+
+    <script src="../dartsWebSite/js/randomGame.js"></script>
+</body>
+</html>

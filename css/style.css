@@ -1,0 +1,213 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    overflow:hidden;
+}
+
+h2 {
+    padding-bottom: 2em;
+}
+
+p {
+    padding-bottom: 2em;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    perspective: 1000px;
+    background-image: url("../img/dartboard.jpg");
+    background-size: cover;
+}
+
+/*--> DIV CARDS Styling <--*/
+
+.explain-games {
+    width: 40%;
+    height: 90%;
+    background: rgb(153, 153, 153);
+    border-radius: 20px;
+    position: absolute;
+    top:5%;
+    transform-origin: right;
+    perspective-origin: 0 0;
+    text-align: center;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 2em;
+}
+
+
+.loc1 {
+    left: 30%;
+    z-index: 0;
+    transition: left 300ms;
+} 
+
+.loc2 {
+    left: 35%;
+    z-index: -1;
+    transition: left 300ms;
+}
+
+.loc3 {
+    left: 40%;
+    z-index: -2;
+    transition: left 300ms;
+}
+
+.flipBack {
+    animation: flipB 400ms linear forwards;
+}
+
+.flipFront {
+    animation: flipB 400ms linear reverse forwards;
+}
+
+.index{
+    z-index: 10 !important;
+}
+
+.menu {
+    border: white solid 1px;
+    width: 7%;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/*--> NAVBAR Styling <--*/
+
+nav {
+    position: relative;
+    display: grid;
+    align-items: center;
+    height: 100%;
+    background-color: rgba(136, 136, 136, 0.89);
+    width: 150px;
+    text-align: center;
+    transform: translateX(-100%);
+    transition: transform 200ms;
+}
+nav.show{
+    transform: translateX(0%);
+    transition: transform 200ms;
+}
+
+nav>ul>a>li{
+    padding: 2em 0 2em 0;
+    margin: 1em 0 1em 0;
+    list-style-type: none;
+    background-color: #999;
+}
+nav>ul>a{
+    background-color: #999;
+    color: #333;
+}
+
+nav>ul>a>li:hover{
+    background-color:#333;
+    color: #999;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+a.active{
+    background-color: white;
+    color:#333;
+}
+
+/*--> MENU BUTTON Styling <--*/
+
+.menu-btn {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    background-color:#999;
+    top: 0;
+    left:0;
+    padding:0;
+    margin:0;
+    text-align: center;
+}
+
+.menu-btn::after,
+.menu-btn::before{
+    content:'';
+    background-color:green;
+    height: 25px;
+    width:35px;
+    position: absolute;
+}
+.menu-btn::after{
+    transform: skew(20deg);
+    top: 0%;
+    left: 90%;
+}
+
+.menu-btn::before{
+    transform: skew(-20deg);
+    bottom: 0%;
+    left: 90%;
+}
+.menu-btn:hover {
+    background-color:#333;
+    color: #999;
+}
+
+.menu-btn:hover::before,
+.menu-btn:hover::after {
+    background-color: rgb(0, 77, 0);
+}
+
+.menu-btn.hide {
+    position: absolute;
+    left:50px;
+    transform: rotateY(180deg);
+}
+.menu-btn.hide::after,
+.menu-btn.hide::before{
+    background-color: red;
+}
+
+.menu-btn.hide:hover::after,
+.menu-btn.hide:hover::before{
+    background-color:darkred;
+}
+
+.menu-btn.hide>p {
+    transform: rotateY(180deg);
+}
+
+@keyframes flipB {
+    0% {
+        transform: rotateY(360deg);
+        left: 40%;
+        z-index: -3;
+    } 
+    50% {
+        z-index: -3;
+        left: 40%;
+    }
+    60% {
+        z-index: 1;
+    }
+    100% {
+        transform: rotateY(0deg);
+        left: 30%;
+        z-index: 1;
+    }
+}
+
+
+

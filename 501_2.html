@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>501 Game</title>
+    <link rel="stylesheet" href="../dartsWebSite/css/501_2.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <ul>
+                <a href="../dartsWebSite/index.html"><li>Home</li></a>
+                <a href="../dartsWebSite/501_2.html" class="active"><li>501 Game</li></a>
+                <a href="../dartsWebSite/randomGame.html"><li>Random Game</li></a>
+                <a href=""><li>Tic-Tac Game</li></a>
+            </ul>
+        </header>
+        <div class="main_content">
+            <div class="scores hidden">
+                <div class="playerStats">
+                    <div class="sets">
+                        <h2>Sets:</h2>
+                        <p id="s1">0</p>
+                    </div>
+                    <div class="legs">
+                        <h2>Legs</h2>
+                        <p id="l1">0</p>
+                    </div>
+                </div>
+                <div class="playerStats">
+                    <div class="sets">
+                        <h2>Sets:</h2>
+                        <p id="s2">0</p>
+                    </div>
+                    <div class="legs">
+                        <h2>Legs:</h2>
+                        <p id="l2">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="leftPlayer">
+                <h2 class="playerOne">Name Team One: <span id="playerOneName"></span></h2>
+                <div class="scoreSection">
+                    <div class="dartPlayerOne" id="dart_1">
+                        <p>Dart One:</p>
+
+                        <input type="number" class="dartValue">
+                        <div class="multiplier">
+                            <input type="radio" class="radio" name="radio1" id="dart1_1_1" value="1"><abbr title="Single"><p>S</p></abbr>
+                            <input type="radio" class="radio" name="radio1" id="dart1_1_2" value="2"><abbr title="Double"><p>D</p></abbr>
+                            <input type="radio" class="radio" name="radio1" id="dart1_1_3" value="3"><abbr title="Triple"><p>T</p></abbr>
+                        </div>
+                    </div>
+                    <div class="dartPlayerOne" id="dart_2">
+                        <p>Dart Two:</p>
+
+                        <input type="number" class="dartValue">
+                        <div class="multiplier">
+                            <input type="radio" class="radio" name="radio2" id="dart1_2_1" value="1"><abbr title="Single"><p>S</p></abbr>
+                            <input type="radio" class="radio" name="radio2" id="dart1_2_2" value="2"><abbr title="Double"><p>D</p></abbr>
+                            <input type="radio" class="radio" name="radio2" id="dart1_2_3" value="3"><abbr title="Triple"><p>T</p></abbr>
+                        </div>
+                    </div>
+                    <div class="dartPlayerOne" id="dart_3">
+                        <p>Dart Three:</p>
+
+                        <input type="number" class="dartValue">
+                        <div class="multiplier">
+                            <input type="radio" class="radio" name="radio3" id="dart1_3_1" value="1"><abbr title="Single"><p>S</p></abbr>
+                            <input type="radio" class="radio" name="radio3" id="dart1_3_2" value="2"><abbr title="Double"><p>D</p></abbr>
+                            <input type="radio" class="radio" name="radio3" id="dart1_3_3" value="3"><abbr title="Triple"><p>T</p></abbr>
+                        </div>
+                    </div>
+                </div>
+                <button class="submitScoreBtn" id="btn1">Submit Scores</button>                
+                <div class="gridScoreBoard">
+                    <div class="scoreBoard">
+                        <div class="amountLeft">
+                            <h2>Amount Left:</h2>
+                        </div>
+                        <div class="amountLeftList">
+                            <ul class="amountL list-ul">
+                                <li id="starter" class="amount1">501</li>
+                            </ul>
+                        </div>
+                        <div class="turnScore">
+                            <h2>Score Last Turn:</h2>
+                        </div>
+                        <div class="scoreTurnList">
+                            <ul class="turnS list-ul" id="scoreT">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <div class="data">
+                <div>
+                    <div class="playerNameInput" id="player1">
+                        <h2>Input Name Player One:</h2>
+                        <input type="text" >
+                        <button class="nameBtn" id="namePlayerOne">Submit Name Player One</button>
+                        <div class="startingAmount">
+                            <p>Select the starting amount:</p>
+                            <input type="checkbox" value="301" class="checkBox">301
+                            <input type="checkbox" value="501" class="checkBox">501
+                        </div>
+                        <div class="exampleDiv">
+                            <p class="nameExample"></p>
+                        </div>
+                    </div>    
+                </div>
+                <div >
+                    <div class="playerNameInput" id="player2">
+                        <h2>Input Name Player Two:</h2>
+                        <input type="text" >
+                        <button class="nameBtn" id="namePlayerTwo">Submit Name Player Two</button>
+                        <div class="startingAmount">
+                            <p>Select the starting amount:</p>
+                            <input type="checkbox" value="301" class="checkBox">301
+                            <input type="checkbox" value="501" class="checkBox">501
+                        </div>                        
+                        <div class="exampleDiv">
+                            <p class="nameExample"></p>
+                        </div>
+                    </div> 
+                </div>
+                <button id="startBtn">Start Game</button>
+            </div>
+            <div class="rightPlayer">
+                <h2 class="playerTwo">Name Team Two: <span id="playerTwoName"></span></h2>
+                <div>
+                    <div class="dartPlayerOne" id="dart_1">
+                        <p>Dart One:</p>
+
+                        <input type="number" class="dartValue">
+                        <div class="multiplier">
+                            <input type="radio" class="radio" name="radio4" id="dart2_1_1" value="1"><abbr title="Single"><p>S</p></abbr>
+                            <input type="radio" class="radio" name="radio4" id="dart2_1_2" value="2"><abbr title="Double"><p>D</p></abbr>
+                            <input type="radio" class="radio" name="radio4" id="dart2_1_3" value="3"><abbr title="Triple"><p>T</p></abbr>
+                        </div>
+                    </div>
+                    <div class="dartPlayerOne" id="dart_2">
+                        <p>Dart Two:</p>
+
+                        <input type="number" class="dartValue">
+                        <div class="multiplier">
+                            <input type="radio" class="radio" name="radio5" id="dart2_2_1" value="1"><abbr title="Single"><p>S</p></abbr>
+                            <input type="radio" class="radio" name="radio5" id="dart2_2_2" value="2"><abbr title="Double"><p>D</p></abbr>
+                            <input type="radio" class="radio" name="radio5" id="dart2_2_3" value="3"><abbr title="Triple"><p>T</p></abbr>
+                        </div>
+                    </div>
+                    <div class="dartPlayerOne" id="dart_3">
+                        <p>Dart Three:</p>
+
+                        <input type="number" class="dartValue">
+                        <div class="multiplier">
+                            <input type="radio" class="radio" name="radio6" id="dart2_3_1" value="1"><abbr title="Single"><p>S</p></abbr>
+                            <input type="radio" class="radio" name="radio6" id="dart2_3_2" value="2"><abbr title="Double"><p>D</p></abbr>
+                            <input type="radio" class="radio" name="radio6" id="dart2_3_3" value="3"><abbr title="Triple"><p>T</p></abbr>
+                        </div>
+                    </div>                
+                </div>
+                <button class="submitScoreBtn" id="btn2">Submit Scores</button>
+                <div class="gridScoreBoard">
+                    <div class="scoreBoard">
+                        <div class="amountLeft">
+                            <h2>Amount Left:</h2>
+                        </div>
+                        <div class="amountLeftList">
+                            <ul class="amountL list-ul">
+                                <li id="starter" class="amount2" >501</li>
+                            </ul>
+                        </div>
+                        <div class="turnScore">
+                            <h2>Score Last Turn:</h2>
+                        </div>
+                        <div class="scoreTurnList">
+                            <ul class="turnS list-ul" id="scoreT">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>            
+        <button id="resetBtn">Edit Names</button>
+        <button id="resetLeg">Reset Leg</button>
+
+        <footer>
+
+        </footer>
+   
+    </div>
+
+    <script src="../dartsWebSite/js/501_2.js"></script>
+</body>
+</html>
